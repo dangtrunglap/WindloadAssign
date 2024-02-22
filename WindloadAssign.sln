@@ -5,6 +5,18 @@ VisualStudioVersion = 17.8.34309.116
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindloadAssign", "WindloadAssign\WindloadAssign.csproj", "{8622D98D-B285-400B-A261-81A7471E8051}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{E99C3EDB-7A11-4FE8-BE9A-EA2C7353943F}"
+	ProjectSection(SolutionItems) = preProject
+		WindloadAssign\bin\Debug\images\Assign_Wind_Icon.png = WindloadAssign\bin\Debug\images\Assign_Wind_Icon.png
+		WindloadAssign\bin\Debug\images\Calcutation_Icon_32.png = WindloadAssign\bin\Debug\images\Calcutation_Icon_32.png
+		WindloadAssign\bin\Debug\images\etabs_icoN-64X64.png = WindloadAssign\bin\Debug\images\etabs_icoN-64X64.png
+		WindloadAssign\bin\Debug\images\Excel_sheet.png = WindloadAssign\bin\Debug\images\Excel_sheet.png
+		WindloadAssign\bin\Debug\images\Filter_Icon_32.png = WindloadAssign\bin\Debug\images\Filter_Icon_32.png
+		WindloadAssign\bin\Debug\images\TorsionFilter-Icon_32.png = WindloadAssign\bin\Debug\images\TorsionFilter-Icon_32.png
+		WindloadAssign\bin\Debug\images\TorsionGet-Icon_32.png = WindloadAssign\bin\Debug\images\TorsionGet-Icon_32.png
+		WindloadAssign\bin\Debug\images\Update_wind_Icon.png = WindloadAssign\bin\Debug\images\Update_wind_Icon.png
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
