@@ -654,6 +654,7 @@ namespace WindloadAssign
 
 
         #endregion
+
         #region RadioButton6_CheckedChanged
         private void RadioButton6_CheckedChanged(object sender, EventArgs e)
         {
@@ -706,60 +707,60 @@ namespace WindloadAssign
         }
         #endregion
 
-        #region CheckBox1_CheckedChanged
-        private void CheckBox1_CheckedChanged(object sender, EventArgs e)
-        {
-            if (CheckBox1.Checked)
-            {
-                CheckBox3.Checked = true;
-            }
-            else
-            {
-                CheckBox3.Checked = false;
-            }
-        }
-        #endregion
+        //#region CheckBox1_CheckedChanged
+        //private void CheckBox1_CheckedChanged(object sender, EventArgs e)
+        //{
+        //    if (CheckBox1.Checked)
+        //    {
+        //        CheckBox3.Checked = true;
+        //    }
+        //    else
+        //    {
+        //        CheckBox3.Checked = false;
+        //    }
+        //}
+        //#endregion
 
-        #region CheckBox2_CheckedChanged
-        private void CheckBox2_CheckedChanged(object sender, EventArgs e)
-        {
-            if (CheckBox2.Checked)
-            {
-                CheckBox4.Checked = true;
-            }
-            else
-            {
-                CheckBox4.Checked = false;
-            }
-        }
-        #endregion
+        //#region CheckBox2_CheckedChanged
+        //private void CheckBox2_CheckedChanged(object sender, EventArgs e)
+        //{
+        //    if (CheckBox2.Checked)
+        //    {
+        //        CheckBox4.Checked = true;
+        //    }
+        //    else
+        //    {
+        //        CheckBox4.Checked = false;
+        //    }
+        //}
+        //#endregion
 
-        #region CheckBox3_CheckedChanged
-        private void CheckBox3_CheckedChanged(object sender, EventArgs e)
-        {
-            if (CheckBox3.Checked)
-            {
-                CheckBox1.Checked = true;
-            }
-            else
-            {
-                CheckBox1.Checked = false;
-            }
-        }
-        #endregion
+        //#region CheckBox3_CheckedChanged
+        //private void CheckBox3_CheckedChanged(object sender, EventArgs e)
+        //{
+        //    if (CheckBox3.Checked)
+        //    {
+        //        CheckBox1.Checked = true;
+        //    }
+        //    else
+        //    {
+        //        CheckBox1.Checked = false;
+        //    }
+        //}
+        //#endregion
 
-        #region CheckBox4_CheckedChanged
-        private void CheckBox4_CheckedChanged(object sender, EventArgs e)
-        {
-            if (CheckBox4.Checked)
-            {
-                CheckBox2.Checked = true;
-            }
-            else
-            {
-                CheckBox2.Checked = false;
-            }
-        }
+        //#region CheckBox4_CheckedChanged
+        //private void CheckBox4_CheckedChanged(object sender, EventArgs e)
+        //{
+        //    if (CheckBox4.Checked)
+        //    {
+        //        CheckBox2.Checked = true;
+        //    }
+        //    else
+        //    {
+        //        CheckBox2.Checked = false;
+        //    }
+        //}
 
 
 
