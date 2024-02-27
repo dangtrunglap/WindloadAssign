@@ -79,16 +79,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
-    <Compile Include="Form1.cs">
+    <Compile Include="Ribbon_Extend.cs" />
+    <Compile Include="Wall_loadAssign.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="Wall_loadAssign.Designer.cs">
+      <DependentUpon>Wall_loadAssign.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WindAssign.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WindAssign.Designer.cs">
+      <DependentUpon>WindAssign.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="WindAssign.resx">
+      <DependentUpon>WindAssign.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

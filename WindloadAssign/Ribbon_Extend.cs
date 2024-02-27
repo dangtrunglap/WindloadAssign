@@ -14,7 +14,7 @@ public class X_Ribbon : ExcelRibbon
    
     public void WINDLOAD_ASSIGN2(IRibbonControl control)
     {
-        Form1 Windload3 = new Form1();
+        WindAssign Windload3 = new WindAssign();
         Windload3.Show();
     }
 

@@ -13,7 +13,7 @@ using System.Windows.Forms;
 
 namespace WindloadAssign
 {
-    public partial class Form1 : Form
+    public partial class WindAssign : Form
     {
         // DIMMENSION ETABS OBJECT
         cOAPI EtabsObject = null;
@@ -35,13 +35,11 @@ namespace WindloadAssign
         double[] SpliceHeight;
 
         #region Innitial Form
-        public Form1()
+        public WindAssign()
         {
             InitializeComponent();
 
             FormBorderStyle = FormBorderStyle.FixedSingle;
-            MaximizeBox = false;
-            MinimizeBox = false;
             TopMost = true;
 
             appXL = (Microsoft.Office.Interop.Excel.Application)ExcelDnaUtil.Application;
@@ -56,7 +54,7 @@ namespace WindloadAssign
             eend = SapModel.GetModelFilename().LastIndexOf(".");
             stt = SapModel.GetModelFilename().LastIndexOf("\\");
             TextBox5.Text = (SapModel.GetModelFilename().Substring(stt + 1, eend - stt - 1));
-
+            
             int NumberLoadPattern = 0;
             string[] NameOfLoadPattern = null;
             SapModel.LoadPatterns.GetNameList(ref NumberLoadPattern, ref NameOfLoadPattern);
@@ -78,10 +76,10 @@ namespace WindloadAssign
                 if (NameOfLoadPattern[i] == Assign_load_shXL.Range["E1"].Value)
                     ComboBox4.SelectedIndex = i;
             }
-
+            
             for (int i = 0; i < 7; i++)
             {
-                if (Assign_load_shXL.Range["T2"].Value == Define_Direction_Cbb.Items[i])
+                if (Assign_load_shXL.Range["T2"].Value == Define_Direction_Cbb.Items[i].ToString())
                     Define_Direction_Cbb.SelectedIndex = i;
             }
 
@@ -115,7 +113,7 @@ namespace WindloadAssign
         #endregion
         //---------------------------------------------------
         #region Assign Load to Etabs (Button ClickEvent)
-        private void Button4_Click(object sender, EventArgs e)
+        private void AssignLoadBtn_Click(object sender, EventArgs e)
         {
             appXL = (Microsoft.Office.Interop.Excel.Application)ExcelDnaUtil.Application;
             wbXL = appXL.ActiveWorkbook;
@@ -142,10 +140,15 @@ namespace WindloadAssign
             {
                 Assign_load_shXL.Range["V2"].Value = "2";
             }
-            Assign_load_shXL.Range["B1"].Value = ComboBox1.SelectedItem;
-            Assign_load_shXL.Range["C1"].Value = ComboBox2.SelectedItem;
-            Assign_load_shXL.Range["D1"].Value = ComboBox3.SelectedItem;
-            Assign_load_shXL.Range["E1"].Value = ComboBox4.SelectedItem;
+            string Wx = ComboBox1.SelectedItem.ToString();
+            string Wy = ComboBox2.SelectedItem.ToString();
+            string Wxx = ComboBox3.SelectedItem.ToString();
+            string Wyy = ComboBox4.SelectedItem.ToString();
+
+            Assign_load_shXL.Range["B1"].Value = Wx;
+            Assign_load_shXL.Range["C1"].Value = Wxx;
+            Assign_load_shXL.Range["D1"].Value = Wy;
+            Assign_load_shXL.Range["E1"].Value = Wyy;
 
             object[,] Frame_Name_arr;
             bool[] Selected;
@@ -262,7 +265,7 @@ namespace WindloadAssign
                                         Frame_Name_arr[count_selected, 6] = Dir;
                                         Frame_Name_arr[count_selected, 7] = CSys;
                                         Frame_Name_arr[count_selected, 2] = Val1;
-                                        Frame_Name_arr[count_selected, 8] = "WX";
+                                        Frame_Name_arr[count_selected, 8] = Wx;
                                         count_selected++;
                                     }
                                     else if (i1 == 2)
@@ -282,7 +285,7 @@ namespace WindloadAssign
                                         Frame_Name_arr[count_selected, 6] = Dir;
                                         Frame_Name_arr[count_selected, 7] = CSys;
                                         Frame_Name_arr[count_selected, 3] = Val1;
-                                        Frame_Name_arr[count_selected, 8] = "WXX";
+                                        Frame_Name_arr[count_selected, 8] = Wxx;
                                         count_selected++;
                                     }
                                     ret = SapModel.FrameObj.SetLoadDistributed(MyName[i], LoadPat, MyType, Dir, Dist1, Dist2,
@@ -312,7 +315,7 @@ namespace WindloadAssign
                                         Frame_Name_arr[count_selected, 6] = Dir;
                                         Frame_Name_arr[count_selected, 7] = CSys;
                                         Frame_Name_arr[count_selected, 3] = Val1;
-                                        Frame_Name_arr[count_selected, 8] = "-WX";
+                                        Frame_Name_arr[count_selected, 8] = "-" + Wx;
 
                                         count_selected++;
                                     }
@@ -335,7 +338,7 @@ namespace WindloadAssign
                                         Frame_Name_arr[count_selected, 6] = Dir;
                                         Frame_Name_arr[count_selected, 7] = CSys;
                                         Frame_Name_arr[count_selected, 2] = Val1;
-                                        Frame_Name_arr[count_selected, 8] = "-WXX";
+                                        Frame_Name_arr[count_selected, 8] = "-" + Wxx;
 
                                         count_selected++;
                                     }
@@ -366,7 +369,7 @@ namespace WindloadAssign
                                         Frame_Name_arr[count_selected, 6] = Dir;
                                         Frame_Name_arr[count_selected, 7] = CSys;
                                         Frame_Name_arr[count_selected, 4] = Val1;
-                                        Frame_Name_arr[count_selected, 8] = "WY";
+                                        Frame_Name_arr[count_selected, 8] = Wy;
 
                                         count_selected++;
                                     }
@@ -389,7 +392,7 @@ namespace WindloadAssign
                                         Frame_Name_arr[count_selected, 6] = Dir;
                                         Frame_Name_arr[count_selected, 7] = CSys;
                                         Frame_Name_arr[count_selected, 5] = Val1;
-                                        Frame_Name_arr[count_selected, 8] = "WYY";
+                                        Frame_Name_arr[count_selected, 8] = Wyy;
 
                                         count_selected++;
                                     }
@@ -420,7 +423,7 @@ namespace WindloadAssign
                                         Frame_Name_arr[count_selected, 6] = Dir;
                                         Frame_Name_arr[count_selected, 7] = CSys;
                                         Frame_Name_arr[count_selected, 5] = Val1;
-                                        Frame_Name_arr[count_selected, 8] = "-WY";
+                                        Frame_Name_arr[count_selected, 8] = "-" + Wy;
                                         count_selected++;
                                     }
                                     else if (i1 == 2)
@@ -442,7 +445,7 @@ namespace WindloadAssign
                                         Frame_Name_arr[count_selected, 6] = Dir;
                                         Frame_Name_arr[count_selected, 7] = CSys;
                                         Frame_Name_arr[count_selected, 4] = Val1;
-                                        Frame_Name_arr[count_selected, 8] = "-WYY";
+                                        Frame_Name_arr[count_selected, 8] = "-" + Wyy;
                                         count_selected++;
                                     }
 
@@ -476,7 +479,7 @@ namespace WindloadAssign
 
         //---------------------------------------------------
         #region "Delete Load Which Assigned Etabs (Button ClickEvent)"
-        private void Button3_Click(object sender, EventArgs e)
+        private void Del_Load_Btn_Click(object sender, EventArgs e)
         {
             int NumberNames = 0;
             string[] MyName = null;
@@ -524,7 +527,7 @@ namespace WindloadAssign
 
         //----------------------------------------------------
         #region "Delete Data which Saved (Button ClickEvent)"
-        private void Button1_Click(object sender, EventArgs e)
+        private void Del_sv_Btn_Click(object sender, EventArgs e)
         {
             Worksheet Assign_data_shXL;
             Assign_data_shXL = (Worksheet)wbXL.Sheets["Frame_data"];
@@ -563,16 +566,18 @@ namespace WindloadAssign
                     Assign_data_shXL.Range["A3"].Resize[data_index_count - 1, 9].Value = new_data_index;
                 }
             }
+            MessageBox.Show("Done", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
         #endregion
 
         #region "Assing Etabs with Saved data (Button ClickEvent)"
-        private void Button2_Click(object sender, EventArgs e)
+        private void Assign_Sv_Data_Btn_Click(object sender, EventArgs e)
         {
             appXL = (Microsoft.Office.Interop.Excel.Application)ExcelDnaUtil.Application;
             wbXL = appXL.ActiveWorkbook;
             Worksheet Assign_data_shXL;
             Assign_data_shXL = wbXL.Sheets["Frame_data"];
+            Worksheet Assign_load_shXL = (Worksheet)wbXL.Sheets["Assign_load"];
             long LastRow;
             LastRow = Assign_data_shXL.Cells[3, 1].End[XlDirection.xlDown].Row;
             object[,] Wind_sheet_index;
@@ -583,7 +588,7 @@ namespace WindloadAssign
 
             Wind_sheet_index = Assign_data_shXL.Range["A3:H" + LastRow].Value;
             object[,] Loadpattern_index;
-            Loadpattern_index = Assign_data_shXL.Range["A2:I2"].Value;
+            Loadpattern_index = Assign_load_shXL.Range["B1:E1"].Value;
 
             // string FrameName; // Frame object name
             string LoadPat = null; // Load pattern name
@@ -613,25 +618,25 @@ namespace WindloadAssign
 
                 if (Wind_sheet_index[i, 3] != null)
                 {
-                    LoadPat = Loadpattern_index[1, 3].ToString();
+                    LoadPat = Loadpattern_index[1, 1].ToString();
                     Val1 = Convert.ToDouble(Wind_sheet_index[i, 3]);
                     Val2 = Val1;
                 }
                 else if (Wind_sheet_index[i, 4] != null)
                 {
-                    LoadPat = Loadpattern_index[1, 4].ToString();
+                    LoadPat = Loadpattern_index[1, 2].ToString();
                     Val1 = Convert.ToDouble(Wind_sheet_index[i, 4]);
                     Val2 = Val1;
                 }
                 else if (Wind_sheet_index[i, 5] != null)
                 {
-                    LoadPat = Loadpattern_index[1, 5].ToString();
+                    LoadPat = Loadpattern_index[1, 3].ToString();
                     Val1 = Convert.ToDouble(Wind_sheet_index[i, 5]);
                     Val2 = Val1;
                 }
                 else if (Wind_sheet_index[i, 6] != null)
                 {
-                    LoadPat = Loadpattern_index[1, 6].ToString();
+                    LoadPat = Loadpattern_index[1, 4].ToString();
                     Val1 = Convert.ToDouble(Wind_sheet_index[i, 6]);
                     Val2 = Val1;
                 }
@@ -648,9 +653,6 @@ namespace WindloadAssign
             //ret = SapModel.View.RefreshView();
             MessageBox.Show("Done", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
-
-
-
 
 
         #endregion
@@ -704,6 +706,11 @@ namespace WindloadAssign
                 CheckBox5.Checked = true;
                 CheckBox6.Checked = false;
             }
+        }
+
+        private void CheckBox1_CheckedChanged(object sender, EventArgs e)
+        {
+
         }
         #endregion
 
@@ -766,7 +773,7 @@ namespace WindloadAssign
 
 
 
-        #endregion
+
 
     } 
 

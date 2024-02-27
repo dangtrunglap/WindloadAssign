@@ -1,6 +1,6 @@
 ﻿namespace WindloadAssign
 {
-    partial class Form1
+    partial class WindAssign
     {
         /// <summary>
         /// Required designer variable.
@@ -55,10 +55,10 @@
             this.CheckBox3 = new System.Windows.Forms.CheckBox();
             this.CheckBox2 = new System.Windows.Forms.CheckBox();
             this.CheckBox1 = new System.Windows.Forms.CheckBox();
-            this.Button4 = new System.Windows.Forms.Button();
-            this.Button3 = new System.Windows.Forms.Button();
-            this.Button2 = new System.Windows.Forms.Button();
-            this.Button1 = new System.Windows.Forms.Button();
+            this.AssignLoadBtn = new System.Windows.Forms.Button();
+            this.Del_Load_Btn = new System.Windows.Forms.Button();
+            this.Assign_Sv_Data_Btn = new System.Windows.Forms.Button();
+            this.Del_sv_Btn = new System.Windows.Forms.Button();
             this.GroupBox4.SuspendLayout();
             this.GroupBox2.SuspendLayout();
             this.GroupBox5.SuspendLayout();
@@ -320,7 +320,6 @@
             this.CheckBox4.Size = new System.Drawing.Size(15, 14);
             this.CheckBox4.TabIndex = 7;
             this.CheckBox4.UseVisualStyleBackColor = true;
-            this.CheckBox4.CheckedChanged += new System.EventHandler(this.CheckBox4_CheckedChanged);
             // 
             // CheckBox3
             // 
@@ -330,7 +329,6 @@
             this.CheckBox3.Size = new System.Drawing.Size(15, 14);
             this.CheckBox3.TabIndex = 6;
             this.CheckBox3.UseVisualStyleBackColor = true;
-            this.CheckBox3.CheckedChanged += new System.EventHandler(this.CheckBox3_CheckedChanged);
             // 
             // CheckBox2
             // 
@@ -340,7 +338,6 @@
             this.CheckBox2.Size = new System.Drawing.Size(15, 14);
             this.CheckBox2.TabIndex = 5;
             this.CheckBox2.UseVisualStyleBackColor = true;
-            this.CheckBox2.CheckedChanged += new System.EventHandler(this.CheckBox2_CheckedChanged);
             // 
             // CheckBox1
             // 
@@ -352,47 +349,47 @@
             this.CheckBox1.UseVisualStyleBackColor = true;
             this.CheckBox1.CheckedChanged += new System.EventHandler(this.CheckBox1_CheckedChanged);
             // 
-            // Button4
+            // AssignLoadBtn
             // 
-            this.Button4.Location = new System.Drawing.Point(375, 245);
-            this.Button4.Name = "Button4";
-            this.Button4.Size = new System.Drawing.Size(93, 41);
-            this.Button4.TabIndex = 55;
-            this.Button4.Text = "Assign ETABS";
-            this.Button4.UseVisualStyleBackColor = true;
-            this.Button4.Click += new System.EventHandler(this.Button4_Click);
+            this.AssignLoadBtn.Location = new System.Drawing.Point(375, 245);
+            this.AssignLoadBtn.Name = "AssignLoadBtn";
+            this.AssignLoadBtn.Size = new System.Drawing.Size(93, 41);
+            this.AssignLoadBtn.TabIndex = 55;
+            this.AssignLoadBtn.Text = "Assign ETABS";
+            this.AssignLoadBtn.UseVisualStyleBackColor = true;
+            this.AssignLoadBtn.Click += new System.EventHandler(this.AssignLoadBtn_Click);
             // 
-            // Button3
+            // Del_Load_Btn
             // 
-            this.Button3.Location = new System.Drawing.Point(263, 245);
-            this.Button3.Name = "Button3";
-            this.Button3.Size = new System.Drawing.Size(93, 41);
-            this.Button3.TabIndex = 54;
-            this.Button3.Text = "Delete Load";
-            this.Button3.UseVisualStyleBackColor = true;
-            this.Button3.Click += new System.EventHandler(this.Button3_Click);
+            this.Del_Load_Btn.Location = new System.Drawing.Point(263, 245);
+            this.Del_Load_Btn.Name = "Del_Load_Btn";
+            this.Del_Load_Btn.Size = new System.Drawing.Size(93, 41);
+            this.Del_Load_Btn.TabIndex = 54;
+            this.Del_Load_Btn.Text = "Delete Load";
+            this.Del_Load_Btn.UseVisualStyleBackColor = true;
+            this.Del_Load_Btn.Click += new System.EventHandler(this.Del_Load_Btn_Click);
             // 
-            // Button2
+            // Assign_Sv_Data_Btn
             // 
-            this.Button2.Location = new System.Drawing.Point(137, 245);
-            this.Button2.Name = "Button2";
-            this.Button2.Size = new System.Drawing.Size(93, 41);
-            this.Button2.TabIndex = 53;
-            this.Button2.Text = "Assign ETABS With Saved";
-            this.Button2.UseVisualStyleBackColor = true;
-            this.Button2.Click += new System.EventHandler(this.Button2_Click);
+            this.Assign_Sv_Data_Btn.Location = new System.Drawing.Point(137, 245);
+            this.Assign_Sv_Data_Btn.Name = "Assign_Sv_Data_Btn";
+            this.Assign_Sv_Data_Btn.Size = new System.Drawing.Size(93, 41);
+            this.Assign_Sv_Data_Btn.TabIndex = 53;
+            this.Assign_Sv_Data_Btn.Text = "Assign ETABS With Saved";
+            this.Assign_Sv_Data_Btn.UseVisualStyleBackColor = true;
+            this.Assign_Sv_Data_Btn.Click += new System.EventHandler(this.Assign_Sv_Data_Btn_Click);
             // 
-            // Button1
+            // Del_sv_Btn
             // 
-            this.Button1.Location = new System.Drawing.Point(25, 245);
-            this.Button1.Name = "Button1";
-            this.Button1.Size = new System.Drawing.Size(93, 41);
-            this.Button1.TabIndex = 52;
-            this.Button1.Text = "Delete Saved";
-            this.Button1.UseVisualStyleBackColor = true;
-            this.Button1.Click += new System.EventHandler(this.Button1_Click);
+            this.Del_sv_Btn.Location = new System.Drawing.Point(25, 245);
+            this.Del_sv_Btn.Name = "Del_sv_Btn";
+            this.Del_sv_Btn.Size = new System.Drawing.Size(93, 41);
+            this.Del_sv_Btn.TabIndex = 52;
+            this.Del_sv_Btn.Text = "Delete Saved";
+            this.Del_sv_Btn.UseVisualStyleBackColor = true;
+            this.Del_sv_Btn.Click += new System.EventHandler(this.Del_sv_Btn_Click);
             // 
-            // Form1
+            // WindAssign
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -403,12 +400,12 @@
             this.Controls.Add(this.GroupBox2);
             this.Controls.Add(this.GroupBox5);
             this.Controls.Add(this.GroupBox1);
-            this.Controls.Add(this.Button4);
-            this.Controls.Add(this.Button3);
-            this.Controls.Add(this.Button2);
-            this.Controls.Add(this.Button1);
-            this.Name = "Form1";
-            this.Text = "Form1";
+            this.Controls.Add(this.AssignLoadBtn);
+            this.Controls.Add(this.Del_Load_Btn);
+            this.Controls.Add(this.Assign_Sv_Data_Btn);
+            this.Controls.Add(this.Del_sv_Btn);
+            this.Name = "WindAssign";
+            this.Text = "Gán tải gió";
             this.GroupBox4.ResumeLayout(false);
             this.GroupBox4.PerformLayout();
             this.GroupBox2.ResumeLayout(false);
@@ -450,9 +447,9 @@
         internal System.Windows.Forms.CheckBox CheckBox3;
         internal System.Windows.Forms.CheckBox CheckBox2;
         internal System.Windows.Forms.CheckBox CheckBox1;
-        internal System.Windows.Forms.Button Button4;
-        internal System.Windows.Forms.Button Button3;
-        internal System.Windows.Forms.Button Button2;
-        internal System.Windows.Forms.Button Button1;
+        internal System.Windows.Forms.Button AssignLoadBtn;
+        internal System.Windows.Forms.Button Del_Load_Btn;
+        internal System.Windows.Forms.Button Assign_Sv_Data_Btn;
+        internal System.Windows.Forms.Button Del_sv_Btn;
     }
 }
